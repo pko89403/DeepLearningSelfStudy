@@ -1,0 +1,6 @@
+.ipynb_checkpoints
+data
+*.tar.gz
+hymenoptera_data
+*.jpg
+*.png
