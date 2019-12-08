@@ -5,3 +5,9 @@ hymenoptera_data
 *.jpg
 *.png
 output
+hymenoptera_data
+mnist_data
+.ipynb_checkpoints
+MNIST
+*.pkl
+*.png
