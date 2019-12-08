@@ -14,8 +14,8 @@ class RBM(nn.Module):
     def __init__(self, n_input_dim=784, n_hidden_dim=128, n_gibbs=1):
         """ Create a RBM """
         super(RBM, self).__init__()
-        self.input = nn.Parameter(torch.randn(1, n_input_dim))
-        self.hidden = nn.Parameter(torch.randn(1, n_hidden_dim))
+        self.input = nn.Parameter(torch.randn(1, n_input_dim)) # input bias
+        self.hidden = nn.Parameter(torch.randn(1, n_hidden_dim)) # hidden bias
         self.weight = nn.Parameter(torch.randn(n_hidden_dim, n_input_dim))
         self.gibbs = n_gibbs
 
@@ -24,6 +24,14 @@ class RBM(nn.Module):
 
         Args : input ( Tensor ) : Input Variable.
         
+        bernoulli(prob=None, logits=None, validate_args=None) 
+        - from torch import distributions.bernoulli
+        - Samples are binary ( 0 or 1 )
+        -- take the value '1' with probability 'p' and '0' with probability '1-p' 
+
+        linear(input, wegith, bias)
+        - from torch import nn.functional.linear
+
         Returns : Tensor : Hidden Variable.
         """
         p = torch.sigmoid(F.linear(input, self.weight, self.hidden))
