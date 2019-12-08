@@ -6,8 +6,9 @@ hymenoptera_data
 *.png
 output
 hymenoptera_data
-mnist_data
+/mnist_data
 .ipynb_checkpoints
 MNIST
 *.pkl
 *.png
+__pycache__
